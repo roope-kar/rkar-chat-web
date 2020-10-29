@@ -1,5 +1,5 @@
 import './index.scss';
 import { render } from 'react-dom';
-import { App } from 'components/App';
+import { RootView } from 'components';
 
-render(<App />, document.getElementById('app'));
+render(<RootView />, document.getElementById('app'));

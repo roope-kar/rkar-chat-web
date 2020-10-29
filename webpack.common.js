@@ -72,6 +72,8 @@ module.exports = {
     extensions: ['.jsx', '.js'],
     alias: {
       components: path.resolve(__dirname, 'src', 'components'),
+      services: path.resolve(__dirname, 'src', 'services'),
+      fonts: path.resolve(__dirname, 'static', 'fonts'),
       'react-dom': '@hot-loader/react-dom'
     }
   }
