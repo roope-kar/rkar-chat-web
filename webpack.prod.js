@@ -3,10 +3,9 @@ const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common');
 const MiniCssExtractCssPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+/* const ManifestPlugin = require('webpack-manifest-plugin'); */
 
 module.exports = webpackMerge.merge(commonConfig, {
     mode: 'production',
@@ -38,16 +37,11 @@ module.exports = webpackMerge.merge(commonConfig, {
     stats: 'minimal',
     optimization: {
         minimizer: [
-            new UglifyJsPlugin({
-                cache: true,
-                parallel: true,
-                sourceMap: true
-            }),
-            new OptimizeCssAssetsPlugin(),
+            new CssMinimizerPlugin(),
         ]
     },
     plugins: [
-        new webpack.HashedModuleIdsPlugin(),
+        new webpack.ids.HashedModuleIdsPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
         }),
@@ -60,6 +54,6 @@ module.exports = webpackMerge.merge(commonConfig, {
             cache: true,
             algorithm: "gzip"
         }),
-        new ManifestPlugin(),
+        /* new ManifestPlugin(), */
     ]
 });

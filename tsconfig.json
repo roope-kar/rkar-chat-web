@@ -2,7 +2,6 @@
     "include": ["src/**/*.ts", "src/**/*.tsx"],
     "exclude": ["node_modules"],
     "compilerOptions": {
-      "outDir": "lib",
       "noImplicitAny": true,
       "moduleResolution": "node",
       "esModuleInterop": true,
