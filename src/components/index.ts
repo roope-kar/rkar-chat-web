@@ -1,2 +1,2 @@
-export { default as RootView } from '@components/RootView';
-export { default as HomeView } from '@components/HomeView';
+export { default as RootView } from 'src/components/RootView';
+export { default as HomeView } from 'src/components/HomeView';

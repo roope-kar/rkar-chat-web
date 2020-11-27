@@ -68,9 +68,8 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      "@components": path.resolve(__dirname, 'src', 'components'),
-      "@services": path.resolve(__dirname, 'src', 'services'),
-      "@fonts": path.resolve(__dirname, 'static', 'fonts'),
+      "src": path.resolve(__dirname, 'src'),
+      "static": path.resolve(__dirname, 'static'),
       'react-dom': '@hot-loader/react-dom'
     }
   }
