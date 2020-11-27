@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'index.jsx'),
+  entry: path.resolve(__dirname, 'src', 'index.tsx'),
   output: {
     path: path.resolve(__dirname, 'static', 'build'),
     filename: '[name].bundle.js'
@@ -9,10 +9,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: 'ts-loader',
           options: {
             cacheDirectory: true
           }
@@ -69,11 +69,11 @@ module.exports = {
     __filename: true
   },
   resolve: {
-    extensions: ['.jsx', '.js'],
+    extensions: ['.tsx', '.ts'],
     alias: {
-      components: path.resolve(__dirname, 'src', 'components'),
-      services: path.resolve(__dirname, 'src', 'services'),
-      fonts: path.resolve(__dirname, 'static', 'fonts'),
+      "@components": path.resolve(__dirname, 'src', 'components'),
+      "@services": path.resolve(__dirname, 'src', 'services'),
+      "@fonts": path.resolve(__dirname, 'static', 'fonts'),
       'react-dom': '@hot-loader/react-dom'
     }
   }

@@ -46,14 +46,16 @@ Master branch is deployed live to a live location.
 
 ## Built With
 
+* [Typescript](https://www.typescriptlang.org/) - Used as the main language
 * [React](https://reactjs.org/) - Used to build the user interface.
-* [SCSS](https://sass-lang.com/) - Used as the pre css language
-* [PostCSS](https://postcss.org/) - Used to optimize css
-* [webpack](https://webpack.js.org/) - Used to bundle, shake, split and optimize js, css and other assets
-* [Docker](https://www.docker.com/) - Separates services into independent service containers that interact with each other.
+* [StyledComponents](https://styled-components.com/) - To build stylized components
+* [Polished](https://polished.js.org/) - To provide the utilities of scss to styled-components
+* [Webpack](https://webpack.js.org/) - Used to bundle, shake, split and optimize js, css and other assets
+* [Docker](https://www.docker.com/) - Separates services into independent microservices that interact with each other.
 * [Node.js](https://nodejs.org/en/) - Runs the web servers for all the services
 * [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) - Subscribe user to notifications from server events.
 * [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets) - Two-way subscribe user to notifier service. Send and receive user status updates.
+* [Jest](https://jestjs.io/) - Used to test the components
 
 ## Contributing
 

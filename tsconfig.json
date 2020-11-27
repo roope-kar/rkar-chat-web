@@ -1,0 +1,25 @@
+{
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "exclude": ["node_modules"],
+    "compilerOptions": {
+      "outDir": "lib",
+      "noImplicitAny": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "module": "ES2020",
+      "target": "ES2015",
+      "jsx": "react",
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": ".",
+      "strict": true,
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "types": ["jest", "node"],
+      "paths": {
+        "@src": ["src/*"],
+        "@components": ["src/components/*"],
+        "@services": ["src/services/*"]
+      },
+    }
+}

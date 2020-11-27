@@ -32,7 +32,7 @@ module.exports = webpackMerge.merge(commonConfig, {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.tsx?$/,
                 enforce: 'pre',
                 exclude: /node_modules/,
                 use: {
