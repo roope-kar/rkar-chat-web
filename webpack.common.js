@@ -13,9 +13,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'ts-loader',
-          options: {
-            cacheDirectory: true
-          }
         }
       },
       {
@@ -69,7 +66,7 @@ module.exports = {
     __filename: true
   },
   resolve: {
-    extensions: ['.tsx', '.ts'],
+    extensions: ['.tsx', '.ts', '.js'],
     alias: {
       "@components": path.resolve(__dirname, 'src', 'components'),
       "@services": path.resolve(__dirname, 'src', 'services'),
