@@ -14,7 +14,7 @@
       "strict": true,
       "sourceMap": true,
       "resolveJsonModule": true,
-      "types": ["jest", "node"],
+      "types": ["jest", "react", "react-dom", "react-router-dom", "styled-components", "node", "webpack-env"],
       "paths": {
         "src/": ["./src/*"]
       },
