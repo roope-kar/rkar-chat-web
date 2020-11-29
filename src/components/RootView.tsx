@@ -7,8 +7,6 @@ import { AuthView, WorkspaceView } from 'src/components';
 
 const Container = styled.div`
   min-height: 100%;
-  background-attachment: fixed;
-  background: #000000;
 `;
 
 const GlobalStyles = createGlobalStyle`
@@ -29,6 +27,8 @@ const GlobalStyles = createGlobalStyle`
 
     html {
         font-family: "Roboto";
+        background-attachment: fixed;
+        background: #000000;
     }
 
     html, body, #app {
@@ -45,7 +45,7 @@ const RootView: React.FunctionComponent = () => {
     <Container>
       <GlobalStyles />
       <BrowserRouter>
-        <Route path={'/'} exact component={AuthView} />
+        <Route path={'/'} component={AuthView} />
         {hasActiveToken && <Route path={'/workspace'} component={WorkspaceView} />}
         <Redirect to={'/'} />
       </BrowserRouter>

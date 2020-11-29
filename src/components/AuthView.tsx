@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Switch, Route, Redirect, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { SigninForm, SignupForm } from 'src/components';
 
 const Container = styled.div`
@@ -55,34 +55,31 @@ const FormDialog = styled.div`
   border-radius: 3px;
 `;
 
-const AuthView: React.FunctionComponent = () => {
-  const match = useRouteMatch();
-  return (
-    <Container>
-      <HeroContainer>
-        <HeroTitle>Hey there! 😍</HeroTitle>
-        <HeroDescription>
-          Thanks for dropping by and checking out my messaging app! <br />
-          This app provides minimal set of features for communicating between users in a workspace.
-        </HeroDescription>
-        <HeroFeatureList>
-          <HeroFeatureItem>Create customized user profile.</HeroFeatureItem>
-          <HeroFeatureItem>Join existing or create your own customized workspace.</HeroFeatureItem>
-          <HeroFeatureItem>Chat with the workspace users in private or in channels.</HeroFeatureItem>
-        </HeroFeatureList>
-        <HeroDescription>Start by creating yourself an user profile! 👉</HeroDescription>
-      </HeroContainer>
-      <FormContainer>
-        <FormDialog>
-          <Switch>
-            <Route exact path={`${match.path}/signin`} component={SigninForm} />
-            <Route exact path={`${match.path}/signup`} component={SignupForm} />
-            <Redirect to={'/signin'} />
-          </Switch>
-        </FormDialog>
-      </FormContainer>
-    </Container>
-  );
-};
+const AuthView: React.FunctionComponent = () => (
+  <Container>
+    <HeroContainer>
+      <HeroTitle>Hey there! 😍</HeroTitle>
+      <HeroDescription>
+        Thanks for dropping by and checking out my messaging app! <br />
+        This app provides minimal set of features for communicating between users in a workspace.
+      </HeroDescription>
+      <HeroFeatureList>
+        <HeroFeatureItem>Create customized user profile.</HeroFeatureItem>
+        <HeroFeatureItem>Join existing or create your own customized workspace.</HeroFeatureItem>
+        <HeroFeatureItem>Chat with the workspace users in private or in channels.</HeroFeatureItem>
+      </HeroFeatureList>
+      <HeroDescription>Start by creating yourself an user profile! 👉</HeroDescription>
+    </HeroContainer>
+    <FormContainer>
+      <FormDialog>
+        <Switch>
+          <Route path={'/signin'} exact component={SigninForm} />
+          <Route path={'/signup'} exact component={SignupForm} />
+          <Redirect to={'/signin'} />
+        </Switch>
+      </FormDialog>
+    </FormContainer>
+  </Container>
+);
 
 export default AuthView;
